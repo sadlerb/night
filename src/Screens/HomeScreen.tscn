@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/UI/UI_Components/VBoxContainer.tscn" type="PackedScene" id=1]
+
+[node name="HomeScreen" type="Control"]
+margin_top = 51.0
+margin_right = 124.0
+margin_bottom = 51.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.0
+margin_top = -50.0
+margin_right = 578.0
+margin_bottom = 310.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 252.0
+margin_top = -17.0
+margin_right = 292.0
+margin_bottom = 14.0
+text = "Night
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 151.0
+margin_top = 176.0
+margin_right = 407.0
+margin_bottom = 258.0
+text = "Left click to attack
+Right click to dash
+Q to block. Time it perfectly for a reflect
+Collet as many scrolls as you can
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" parent="." instance=ExtResource( 1 )]
+margin_left = 213.0
+margin_top = 90.0
+margin_right = 337.0
+margin_bottom = 141.0
+
+[node name="Play" parent="VBoxContainer" index="0"]
+next_scene_path = "res://src/Levels/Level1.tscn"
+
+[editable path="VBoxContainer"]

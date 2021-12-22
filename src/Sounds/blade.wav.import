@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blade.wav-738269c718c9022911c751dabf4c24e8.sample"
+
+[deps]
+
+source_file="res://src/Sounds/blade.wav"
+dest_files=[ "res://.import/blade.wav-738269c718c9022911c751dabf4c24e8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

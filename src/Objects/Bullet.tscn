@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/bullet.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://src/Objects/bullet_smoke.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Objects/bullet_impact.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/lights1.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.78572
+height = 3.14287
+
+[node name="Bullet" type="KinematicBody2D" groups=["bullet"]]
+position = Vector2( 0, -1 )
+scale = Vector2( 0.185031, 0.130815 )
+collision_layer = 0
+collision_mask = 11
+script = ExtResource( 2 )
+smokeScene = ExtResource( 3 )
+bulletImpact = ExtResource( 4 )
+
+[node name="Bullet" type="Sprite" parent="."]
+position = Vector2( -16.782, -14.777 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 2.79699, 0 )
+texture = ExtResource( 5 )
+texture_scale = 6.34
+energy = 0.63
+
+[node name="body" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0330121, -0.0143277 )
+rotation = 1.57079
+scale = Vector2( 1, 1.28571 )
+shape = SubResource( 1 )

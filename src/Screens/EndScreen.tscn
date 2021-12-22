@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/UI/UI_Components/VBoxContainer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Screens/EndScreen.gd" type="Script" id=2]
+
+[node name="EndScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0705882, 0.0666667, 0.0666667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+margin_left = 213.0
+margin_top = 97.0
+margin_right = 397.0
+margin_bottom = 128.0
+text = "Score
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" parent="." instance=ExtResource( 1 )]
+margin_left = -78.0
+margin_top = -24.0
+margin_right = 46.0
+margin_bottom = 27.0
+
+[node name="Play" parent="buttons" index="0"]
+text = "Play Again"
+next_scene_path = "res://src/Levels/Level1.tscn"
+
+[node name="restarts2" type="Label" parent="."]
+margin_left = 214.0
+margin_top = 66.0
+margin_right = 399.0
+margin_bottom = 80.0
+text = "Restarts"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="buttons"]

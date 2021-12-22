@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/UI/UI_Components/Fade.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/UI/UserInterface.gd" type="Script" id=2]
+[ext_resource path="res://assets/reflect_icon.png" type="Texture" id=3]
+[ext_resource path="res://assets/dash_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/scroll.png" type="Texture" id=5]
+
+[node name="UserInterface" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 128
+
+[node name="Fade" parent="CanvasLayer" instance=ExtResource( 1 )]
+
+[node name="level_score" type="Label" parent="."]
+margin_left = 36.0
+margin_top = 14.0
+margin_right = 60.0
+margin_bottom = 28.0
+text = "%s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="level_score"]
+margin_left = -40.0
+margin_top = -14.0
+margin_bottom = 26.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="AbilityCounts" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 294.0
+margin_top = 115.0
+margin_right = 319.0
+margin_bottom = 193.0
+custom_constants/separation = 35
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dashes" type="Label" parent="AbilityCounts"]
+margin_right = 25.0
+margin_bottom = 14.0
+text = "%s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="AbilityCounts/dashes"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -40.0
+margin_top = -13.0
+margin_bottom = 27.0
+texture = ExtResource( 4 )
+expand = true
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="blocks" type="Label" parent="AbilityCounts"]
+margin_top = 49.0
+margin_right = 25.0
+margin_bottom = 63.0
+text = "%s"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="AbilityCounts/blocks"]
+margin_left = -40.0
+margin_top = -22.0
+margin_bottom = 18.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00392157, 0, 0, 0.52549 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 44.0
+margin_right = 20.0
+margin_bottom = 58.0
+text = "Paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resets_label" type="Label" parent="PauseOverlay"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Resets: %s"
